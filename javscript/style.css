@@ -1,0 +1,25 @@
+body {
+    background: teal;
+    margin: 20px;
+}
+
+.header {
+    color: white;
+    background: orange;
+    width: 300px;
+    padding: 10px;  
+}
+
+.instructions {
+    background: tan;
+    width: 600px;
+    color: green;
+    padding: 10px;
+}
+
+.numberBox {
+    background: green;
+    color: purple;
+    width: 200px;
+    padding: 10px;
+}
