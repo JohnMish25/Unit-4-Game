@@ -3,12 +3,9 @@ $(document).ready(function () {
   //~~~~~~~~~~~Define Variables~~~~~~~~~~~~~~~
 
   //variable for random number for computer 
-  var r
-  
-  
-  random = Math.floor(Math.random() * 101 + 19)
-  $('#computerNum').text(random);
-  console.log(random)
+  var Random = Math.floor(Math.random() * 101 + 19)
+  $('#computerNum').text(Random);
+  console.log(Random)
   var greenNum = Math.floor(Math.random() * 11 + 1);
   var orangeNum = Math.floor(Math.random() * 11 + 1);
   var pinkNum = Math.floor(Math.random() * 11 + 1);
@@ -16,9 +13,7 @@ $(document).ready(function () {
 
   //variables for wins & losses
   var wins = 0;
-  console.log (wins)
   var losses = 0;
-  console.log (losses)
   //variable for added guesses
   var userTotal = 0;
 
@@ -32,18 +27,31 @@ $(document).ready(function () {
 
 
   function game() {
-    random = Math.floor(Math.random() * 101 + 19);
-    console.log(random);
-    $('#computerNum').text(random);
+    Random = Math.floor(Math.random() * 101 + 19);
+    console.log(Random);
+    $('#computerNum').text(Random);
 
+    function winner() {
+      wins++;
+      $("#numWins").text(wins);
+      game();
+    }
   
+    function loser() {
+      losses++;
+      $("#numLosses").text(losses);
+      game();
+    }
+
+
+
     greenNum = Math.floor(Math.random() * 11 + 1);
     orangeNum = Math.floor(Math.random() * 11 + 1);
     pinkNum = Math.floor(Math.random() * 11 + 1);
     purpleNum = Math.floor(Math.random() * 11 + 1);
     userTotal = 0;
     $('#finalTotal').text(userTotal);
-  }
+  
 
 
   
@@ -54,21 +62,14 @@ $(document).ready(function () {
 
   $('#green').on('click', function () {
     userTotal = userTotal + greenNum;
-    console.log (userTotal)
     console.log(greenNum)
     $('#finalTotal').text(userTotal);
-    if (userTotal == random) {
-        wins++;
-        $("#numWins").text(wins);
-        $('#outcome').text("Winner!");
-        game();
+    if (userTotal === random) {
+      winner()
     }
 
     else if (userTotal > random) {
-      losses++;
-      $("#numLosses").text(losses);
-      $('#outcome').text("Loser!");
-      game();
+      loser()
     }
 
   });
@@ -76,61 +77,40 @@ $(document).ready(function () {
 
   $('#orange').on('click', function () {
     userTotal = userTotal + orangeNum;
-    console.log (userTotal)
     console.log(orangeNum);
     $('#finalTotal').text(userTotal);
-    if (userTotal == random) {
-        wins++;
-        $("#numWins").text(wins);
-        $('#outcome').text("Winner!");
-        game();
+    if (userTotal === random) {
+      winner()
     }
 
     else if (userTotal > random) {
-      losses++;
-      $("#numLosses").text(losses);
-      $('#outcome').text("Loser!");
-      game();
+      loser()
     }
   });
 
   $('#pink').on('click', function () {
     userTotal = userTotal + pinkNum;
-    console.log (userTotal)
     console.log(pinkNum);
     $('#finalTotal').text(userTotal);
-    if (userTotal == random) {
-        wins++;
-        $("#numWins").text(wins);
-        $('#outcome').text("Winner!");
-        game();
+    if (userTotal === random) {
+      winner()
     }
 
     else if (userTotal > random) {
-      losses++;
-      $("#numLosses").text(losses);
-      $('#outcome').text("Loser!");
-      game();
+      loser()
     }
   });
 
   $('#purple').on('click', function () {
     userTotal = userTotal + purpleNum;
-    console.log (userTotal)
     console.log(purpleNum);
     $('#finalTotal').text(userTotal);
-    if (userTotal == random) {
-        wins++;
-        $("#numWins").text(wins);
-        $('#outcome').text("Winner!");
-        game();
+    if (userTotal === random) {
+      winner()
     }
 
     else if (userTotal > random) {
-      losses++;
-      $("#numLosses").text(losses);
-      $('#outcome').text("Loser!");
-      game();
+      loser()
     }
 
 
@@ -139,7 +119,7 @@ $(document).ready(function () {
   });
 
 
-
+  }
 
 
 });
