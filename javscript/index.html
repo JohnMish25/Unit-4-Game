@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <h1 class = header >Crystals Collector!</h1>
-    <div class = instructions>
-    <h3> You will be given a random number at the start of the game.</h3>
-    <h3>There are four crystals below. By clicking on a crystal you will add a specific amount of point to your total score</h3>
-    <h3>You win the game byu matching your total score to the random numner, you lose the game if your total score goes above the random number.</h3>
-    <h3>The value of each crystal is hidden from you until you click it</h3>
-    <h3>Each time when the game starts, the game will change the values of each crystal.</h3>
-    </div>
-<br>
-   <!-- Active # here -->
-    <div class = "numberBox">
-        <h1> # </h1>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src= game.js></script>
 
-    <div>
-        <p> Wins: </p>
-        <p> Loses: </p>
+</head>
+
+<body>
+    <h1 class=header>Crystals Collector!</h1>
+    <div class=instructions>
+        <h3> You will be given a random number at the start of the game.</h3>
+        <h3>There are four crystals below. By clicking on a crystal you will add a specific amount of point to your
+            total score</h3>
+        <h3>You win the game byu matching your total score to the random numner, you lose the game if your total score
+            goes above the random number.</h3>
+        <h3>The value of each crystal is hidden from you until you click it</h3>
+        <h3>Each time when the game starts, the game will change the values of each crystal.</h3>
     </div>
+    <br>
+    <!-- Active # here -->
+    <row class="row">
+        <div class="numberBox">
+            <h3> Target Number: <span id="computerNum"></span> </h3>
+        </div>
+
+        <div class=winLossBox>
+            <p> </p>
+            <p> Wins: </p>
+            <p> Loses: </p>
+        </div>
+    </row>
 
     <!-- crystals here -->
-    <!-- Your total score textblock -->
-    <div>
-            <p> Your total score is: </p>
+    <div class="row">
+        <div class="buttons">
+            <img src="images/green.jpeg" class=gem id=green alt="Green Crystal">
+            <img src="images/orange.jpeg" class=gem id=orange alt="Orange Crystal">
+            <img src="images/pink.jpeg" class=gem id=pink alt="Pink Crystal">
+            <img src="images/purple.jpeg" class=gem id=purple alt="Purple Crystal">
         </div>
+    </div>
 
-         <!-- Your total score -->
-        <div>
-        </div>
+
+    <!-- Your total score textblock -->
+    <div class=totalScore>
+        <p> Your total score is: </p>
+    </div>
+
+    <!-- Your total score -->
+    <div class=totalScoreNum>
+        <h3> Your Number: </h3>
+    </div>
+
+
+    
+
+
+    
 
 </body>
+
 </html>

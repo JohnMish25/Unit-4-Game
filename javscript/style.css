@@ -23,3 +23,43 @@ body {
     width: 200px;
     padding: 10px;
 }
+
+.winLossBox {
+    background: skyblue;
+    padding: 10px;
+    width: 100px;
+    margin: 20px;
+  
+
+}
+
+.row {
+    display: flex;
+    clear: both;
+}
+
+.buttons {
+    float: left;
+}
+.gem {
+    flex: 25%;
+    height: 25%;
+    max-width: 150px !important;
+    max-height: 150px !important;
+    clear: both;
+
+}
+
+.totalScore {
+background: green;
+color: white;
+padding: 5px;
+width: 200px;
+}
+
+.totalScoreNum {
+    background: blue;
+    color: white;
+    padding: 5px;
+    width: 200px;
+}
